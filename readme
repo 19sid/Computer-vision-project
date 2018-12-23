@@ -1,0 +1,41 @@
+Cv project 
+Counting cars 
+Siddharth banra
+--------------------------------------------------------------------------------------------------------------
+HOW TO RUN THE CODE 
+
+Enter the image name in the main file. these image should be in the test_images folder.
+use out.p model.
+RUN- python3 main.py
+
+check settings.py file to change the parametes of the hog featurs before training. 
+
+--------------------------------------------------------------------------------------------------------------
+ABOUT THE FILES
+bulit_data.py
+This file collects all the images of cars and non cars and saves it as an np.array.
+
+trian.py
+this file is used to train the model. To change the features selection and parameters open setting.py
+This file reades data from the built_data.py and trains the model.
+
+main.py
+this is the main file. This file runs on the image which are in the test_images folder , user has to specify the name of the image present in the folder.
+
+window.py
+This file contains all the sliding window and the non maximal supression function.
+
+features.py
+This file contains functions used to extract hog features,spacial features, colour histogram .
+
+setting.py
+This file contains all the parameters of the the features and also give option to choose features. 
+
+All the images require different sizes of bounding boxes. User can change the bounding box size in the main.py file --  xy_window(width,height),
+xy_overlap(s direction,y direction) -> this shifts the sliding window  ,x tell how much to overlap with the previos window in x direction and y tells in y direction. 
+
+Bounding box size has to be changed to get best results.
+orientaion ,pixel_percell,cell_per_block can be changed while training with to get different results on different images.
+
+out.p is made using hog,spacial features and colour of histogram features.  chage the following parameters in setting.py wile using out.py
+spatial_feat = true ,hist_feat = True ,hog_feat = True in settings.py
